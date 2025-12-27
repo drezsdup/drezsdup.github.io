@@ -1,0 +1,137 @@
+:root {
+  --bg: #050505;
+  --card: #0c0c0c;
+  --neon: #00f7ff;
+  --text: #eaeaea;
+  --muted: #9a9a9a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* SCANLINES */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 100px; }
+}
+
+/* NAV */
+header {
+  position: sticky;
+  top: 0;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,247,255,0.2);
+}
+
+header h1 {
+  color: var(--neon);
+  text-shadow: 0 0 15px var(--neon);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+nav a:hover {
+  color: var(--neon);
+}
+
+/* HERO */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px var(--neon); }
+  50% { text-shadow: -2px -2px var(--neon); }
+  100% { text-shadow: 2px 2px var(--neon); }
+}
+
+/* BUTTONS */
+.cta, .order {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  text-decoration: none;
+}
+
+.cta:hover, .order:hover {
+  background: var(--neon);
+  color: #000;
+}
+
+/* PRODUCT */
+.product {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,247,255,0.2);
+}
+
+/* FLOATING ORBS */
+.orb {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0,247,255,0.4), transparent 70%);
+  filter: blur(40px);
+}
+
+.orb.one { top: 10%; left: -50px; }
+.orb.two { bottom: 10%; right: -50px; }
+
+
+/* JS animation helpers */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
