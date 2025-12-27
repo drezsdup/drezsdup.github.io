@@ -40,3 +40,12 @@ if (orderBtn) {
     console.log('Order button clicked');
   });
 }
+
+document.querySelectorAll('.menu-item').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    item.style.letterSpacing = '6px';
+  });
+  item.addEventListener('mouseleave', () => {
+    item.style.letterSpacing = '3px';
+  });
+});
