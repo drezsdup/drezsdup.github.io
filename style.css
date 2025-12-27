@@ -135,3 +135,78 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== MENU PAGE ===== */
+
+.menu-page {
+  background: radial-gradient(circle at top, #0a0a0a, #000);
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-header h1 {
+  color: var(--neon);
+  letter-spacing: 2px;
+}
+
+.close-btn {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.close-btn:hover {
+  opacity: 1;
+  color: var(--neon);
+}
+
+.menu-container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.menu-item {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--neon);
+  left: 0;
+  bottom: -8px;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  color: var(--neon);
+}
+
+.menu-item:hover::after {
+  width: 100%;
+}
+
+.menu-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
