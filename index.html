@@ -1,100 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COLD DROP — Limited Tees</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COLDWEAR | Batch 001</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #151515;
+      --accent: #00f0ff;
+      --text: #f5f5f5;
+      --muted: #9a9a9a;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #000;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      color: var(--accent);
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 50px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+      border: 1px solid #222;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+
+    .card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      margin: 10px 0;
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .small-text {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      border: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00c2cc;
+    }
+
+    .info-section {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      border-top: 1px solid #222;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
 
-  <div class="orb one"></div>
-  <div class="orb two"></div>
+<header>
+  <h1>COLDWEAR</h1>
+  <nav>
+    <a href="#shop">SHOP</a>
+    <a href="#info">INFO</a>
+  </nav>
+</header>
 
-  <header>
-    <h1>COLD DROP</h1>
-    <nav>
-      <a href="menu.html" class="menu-btn">MENU</a>
-    </nav>
-  </header>
-
-  <main id="home" class="hero">
-    <h2>WEAR THE MINDSET</h2>
-    <p>Limited Maharashtra-only street drop. No restocks.</p>
-    <a class="cta" href="#shop">ENTER DROP</a>
-  </main>
-
-  <section id="shop">
-  <h3>DROP #001</h3>
-
-  <div class="products-grid">
-
-    <!-- PRODUCT 1 -->
-    <div class="product">
-      <h4>BLACK // COLD TEE</h4>
-      <p>Premium cotton • Oversized fit</p>
-      <p>Sizes: S M L XL</p>
-      <p>₹799</p>
-      <a class="order"
-        href="https://wa.me/919766872064?text=Hi%2C%20I%20want%20to%20order%20the%20BLACK%20%2F%2F%20COLD%20TEE.%0ASize%3A%20%0AQuantity%3A%20">
-        ORDER ON WHATSAPP
-      </a>
-    </div>
-
-    <!-- PRODUCT 2 -->
-    <div class="product">
-      <h4>WHITE // MINDSET TEE</h4>
-      <p>Heavyweight cotton • Street fit</p>
-      <p>Sizes: S M L XL</p>
-      <p>₹849</p>
-      <a class="order"
-        href="https://wa.me/919766872064?text=Hi%2C%20I%20want%20to%20order%20the%20WHITE%20%2F%2F%20MINDSET%20TEE.%0ASize%3A%20%0AQuantity%3A%20">
-        ORDER ON WHATSAPP
-      </a>
-    </div>
-
-    <!-- PRODUCT 3 (LIMITED) -->
-    <div class="product">
-      <h4>STEALTH // LIMITED EDITION</h4>
-      <p>Ultra limited • Numbered batch</p>
-      <p>Sizes: M L XL</p>
-      <p>₹999</p>
-      <a class="order"
-        href="https://wa.me/919766872064?text=Hi%2C%20I%20want%20to%20order%20the%20STEALTH%20%2F%2F%20LIMITED%20EDITION.%0ASize%3A%20%0AQuantity%3A%20">
-        ORDER ON WHATSAPP
-      </a>
-    </div>
-
-  </div>
+<section class="hero">
+  <h2>BATCH 001</h2>
+  <p>Pre-order drop. Limited to 10 pieces.</p>
+  <div class="badge">No Restock • Maharashtra Only</div>
 </section>
 
-  <section id="how">
-    <h3>HOW IT WORKS</h3>
-    <ol>
-      <li>Choose your size</li>
-      <li>Order via WhatsApp</li>
-      <li>We confirm & print</li>
-      <li>Delivery in 2–3 weeks</li>
-    </ol>
-  </section>
+<section id="shop" class="products">
 
-  <section id="contact">
-    <h3>CONTACT</h3>
-    <p>WhatsApp: +91 97668 72064</p>
-    <p>Payment shared after confirmation</p>
-  </section>
+  <div class="card">
+    <img src="images/black-tee.jpg" alt="Black Tee">
+    <div class="card-content">
+      <h3>Black // Core Tee</h3>
+      <div class="price">₹999</div>
+      <div class="small-text">Premium cotton • Oversized fit • 10 slots only</div>
+      <button onclick="orderNow('Black // Core Tee')">Order via WhatsApp</button>
+    </div>
+  </div>
 
-  <footer>
-    © 2025 COLD DROP — Limited streetwear experiment
-  </footer>
+  <div class="card">
+    <img src="images/white-tee.jpg" alt="White Tee">
+    <div class="card-content">
+      <h3>White // Core Tee</h3>
+      <div class="price">₹999</div>
+      <div class="small-text">Heavyweight feel • Clean street look</div>
+      <button onclick="orderNow('White // Core Tee')">Order via WhatsApp</button>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="card">
+    <img src="images/stealth-tee.jpg" alt="Limited Tee">
+    <div class="card-content">
+      <h3>Stealth // Limited</h3>
+      <div class="price">₹1099</div>
+      <div class="small-text"><strong>Only 10 total pieces.</strong> Numbered batch.</div>
+      <button onclick="orderNow('Stealth // Limited')">Order via WhatsApp</button>
+    </div>
+  </div>
+
+</section>
+
+<section id="info" class="info-section">
+  ⚠ Pre-order model. Printing starts after batch closes.<br><br>
+  Delivery time: 2–3 weeks.<br>
+  Size exchange allowed within 3 days (no refunds).<br><br>
+  Full payment required to confirm slot.
+</section>
+
+<footer>
+  © 2026 COLDWEAR — Batch 001
+</footer>
+
+<script>
+  function orderNow(product) {
+    const message = `Hi, I want to order the ${product}.%0ASize:%0AQuantity:`;
+    window.location.href = `https://wa.me/919766872064?text=${message}`;
+  }
+</script>
 
 </body>
 </html>
-
