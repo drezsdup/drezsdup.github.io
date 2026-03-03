@@ -163,8 +163,8 @@ footer{
 <header>
 <h1>DREZSD UP</h1>
 <nav>
-<a href="#">SHOP</a>
-<a href="#">INFO</a>
+<a href="#shop">SHOP</a>
+<a href="#info">INFO</a>
 </nav>
 </header>
 
@@ -173,14 +173,14 @@ footer{
 <p>Pre-order drop. Only 10 pieces. No restock.</p>
 </section>
 
-<section class="products">
+<section id="shop" class="products">
 
 <div class="card">
 <img src="images/black-tee.jpg" alt="Black Tee">
 <div class="card-content">
 <h3>Black // Core</h3>
 <div class="price">₹999</div>
-<button>Order Now</button>
+<button onclick="orderNow(this)">Order Now</button>
 </div>
 </div>
 
@@ -189,7 +189,7 @@ footer{
 <div class="card-content">
 <h3>White // Core</h3>
 <div class="price">₹999</div>
-<button>Order Now</button>
+<button onclick="orderNow(this)">Order Now</button>
 </div>
 </div>
 
@@ -198,10 +198,15 @@ footer{
 <div class="card-content">
 <h3>Stealth // Limited</h3>
 <div class="price">₹1099</div>
-<button>Order Now</button>
+<button onclick="orderNow(this)">Order Now</button>
 </div>
 </div>
 
+</section>
+
+<section id="info" style="text-align:center;padding:60px 20px;color:#888;font-size:14px;">
+Pre-order model • Printing starts after batch closes<br>
+Delivery: 2–3 weeks • No refunds • Size exchange only within 3 days
 </section>
 
 <footer>
@@ -218,8 +223,13 @@ document.addEventListener('mousemove',e=>{
   glow.style.left=e.clientX+'px';
   glow.style.top=e.clientY+'px';
 });
+
+function orderNow(button){
+  const product = button.parentElement.querySelector('h3').innerText;
+  const message = `Hi, I want to order the ${product}.%0ASize:%0AQuantity:`;
+  window.location.href = `https://wa.me/91YOURNUMBERHERE?text=${message}`;
+}
 </script>
 
 </body>
 </html>
-
