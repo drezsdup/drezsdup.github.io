@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DREZSD UP | Batch 001</title>
+<title>COLDWEAR | Batch 001</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
@@ -161,10 +161,10 @@ footer{
 <div class="cursor-glow"></div>
 
 <header>
-<h1>DREZSD UP</h1>
+<h1>COLDWEAR</h1>
 <nav>
-<a href="#shop">SHOP</a>
-<a href="#info">INFO</a>
+<a href="#shop" onclick="scrollToSection('shop')">SHOP</a>
+<a href="#info" onclick="scrollToSection('info')">INFO</a>
 </nav>
 </header>
 
@@ -210,7 +210,7 @@ Delivery: 2–3 weeks • No refunds • Size exchange only within 3 days
 </section>
 
 <footer>
-© 2026 DREZSD UP — Engineered for the bold
+© 2026 COLDWEAR — Engineered for the bold
 </footer>
 
 <script>
@@ -224,13 +224,24 @@ document.addEventListener('mousemove',e=>{
   glow.style.top=e.clientY+'px';
 });
 
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el){
+    el.scrollIntoView({behavior:'smooth'});
+  }
+}
+
 function orderNow(button){
   const product = button.parentElement.querySelector('h3').innerText;
   const message = `Hi, I want to order the ${product}.%0ASize:%0AQuantity:`;
-  window.location.href = `https://wa.me/919766872064?text=${message}`;
+  // Replace 919876543210 with your real WhatsApp number (country code + number, no + or spaces)
+  const phone = "919766872064";
+  const encoded = encodeURIComponent(`Hi, I want to order the ${product}.
+Size: 
+Quantity:`);
+  window.location.href = `https://wa.me/${phone}?text=${encoded}`;
 }
 </script>
 
 </body>
 </html>
-
